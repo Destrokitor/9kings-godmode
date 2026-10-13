@@ -19,6 +19,8 @@ namespace NineKingsGodMode
                 var host = new GameObject("NineKingsGodMode");
                 UnityEngine.Object.DontDestroyOnLoad(host);
                 host.AddComponent<GodModeHost>();
+                // canal de teste (só existe no build de desenvolvimento)
+                Type.GetType("NineKingsGodMode.Dev.DevChannel")?.GetMethod("Attach")?.Invoke(null, new object[] { host });
                 Debug.Log("[GodMode] carregado");
             }
             catch (Exception e)

@@ -140,6 +140,20 @@ namespace NineKingsGodMode
             catch { return c.name; }
         }
 
+        // Texto oficial da carta (com as cores do jogo).
+        public static string CardDescription(CardSo c)
+        {
+            try { return c.GetDescription(); } catch { return ""; }
+        }
+
+        public static string CardType(CardSo c)
+        {
+            string type = "";
+            try { type = LocalizationManager.GetTermTranslation(c.GetTypeLocalizationKey()) ?? ""; } catch { }
+            var deck = Decks.FirstOrDefault(d => d.Value.Contains(c)).Key;
+            return string.Join(" · ", new[] { type, deck }.Where(x => !string.IsNullOrWhiteSpace(x)));
+        }
+
         public static bool AddCardToHand(CardSo card)
         {
             if (!InRun || card == null) return false;
@@ -234,6 +248,11 @@ namespace NineKingsGodMode
         public static string PolicyName(Policy p)
         {
             try { return p.GetTranslatedName(); } catch { return ""; }
+        }
+
+        public static string PolicyDescription(Policy p)
+        {
+            try { return p.GetDescription(); } catch { return ""; }
         }
 
         public static void AddPolicy(Policy p)

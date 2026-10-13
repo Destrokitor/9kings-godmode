@@ -120,7 +120,16 @@ namespace NineKingsGodMode
             var hint = Ui.Text(bottom, "Console: Command direito + Delete", 26, Ui.Dim);
             Ui.Size(hint, 520, 70);
 
+            Tooltip.Create((RectTransform)transform);
             ShowTab(s_Tab);
+        }
+
+        static void Describe(Component target, Func<string> title, Func<string> subtitle, Func<string> body)
+        {
+            var t = target.gameObject.AddComponent<TooltipTrigger>();
+            t.Title = title;
+            t.Subtitle = subtitle;
+            t.Body = body;
         }
 
         void ShowTab(Tab tab)
@@ -330,6 +339,8 @@ namespace NineKingsGodMode
             Ui.Size(state, 216, 24);
             state.gameObject.AddComponent<LiveText>().Source = () =>
                 Actions.IsBanned(card) ? "BANIDA" : Actions.ForcedLoot == Actions.EntityName(card) ? "NO SAQUE" : "";
+
+            Describe(btn, () => Actions.CardName(card), () => Actions.CardType(card), () => Actions.CardDescription(card));
         }
 
         void Pager(Transform parent, Func<int> get, Action<int> set, int pages)
@@ -407,6 +418,10 @@ namespace NineKingsGodMode
             var t = b.GetComponentInChildren<TextMeshProUGUI>();
             t.textWrappingMode = TextWrappingModes.Normal;
             t.gameObject.AddComponent<LiveText>().Source = () => Actions.AreaLabel(area);
+            Describe(b,
+                () => area.Placed != null ? Actions.CardName(area.Placed) : area.Unlocked ? "Terreno vazio" : "Terreno bloqueado",
+                () => area.Placed != null ? "Nível " + area.Placed.TooltipLevel + " · " + area.GetTroopCount() + " tropas" : "",
+                () => area.Placed != null ? Actions.CardDescription(area.Placed) : area.Unlocked ? "Coloque uma carta aqui." : "Use \"Desbloquear\" para liberar.");
         }
 
         void BuildDecrees(RectTransform root)
@@ -433,6 +448,7 @@ namespace NineKingsGodMode
             {
                 var policy = p;
                 var b = Ui.Button(grid, Actions.PolicyName(policy), () => Actions.AddPolicy(policy), -1, -1, 26);
+                Describe(b, () => Actions.PolicyName(policy), () => "Decreto", () => Actions.PolicyDescription(policy));
                 b.GetComponentInChildren<TextMeshProUGUI>().textWrappingMode = TextWrappingModes.Normal;
             }
             Pager(root, () => s_PolicyPage, v => s_PolicyPage = v, pages);

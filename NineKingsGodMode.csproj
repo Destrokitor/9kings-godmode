@@ -10,6 +10,9 @@
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <GameManaged>$(HOME)/Library/Application Support/Steam/steamapps/common/9 Kings/9Kings.app/Contents/Resources/Data/Managed</GameManaged>
   </PropertyGroup>
+  <ItemGroup Condition="'$(Dev)' != '1'">
+    <Compile Remove="src/Dev/**" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="$(GameManaged)/netstandard.dll" Private="false" />
     <Reference Include="$(GameManaged)/mscorlib.dll" Private="false" />

@@ -14,6 +14,8 @@ O Modo Deus continua ao usar **Continue**. Enquanto ele está ligado nada do seu
 (XP, níveis, desbloqueios, estatísticas, conquistas Steam); ao voltar ao menu o perfil real é recarregado.
 Nunca liga no multiplayer.
 
+Passe o mouse e deixe parado sobre uma carta, decreto ou terreno para ver o efeito (texto oficial do jogo).
+
 ## Abas
 | Aba | O que faz |
 |---|---|
@@ -35,3 +37,4 @@ ele é refeito sozinho.
 - Código: `src/` — `GodMode.cs` (estado/proteção), `Patches.cs` (Harmony), `Actions.cs` (ações),
   `GodMenu.cs` (janela), `Ui.cs` (componentes no estilo do jogo), `KingSelectionToggle.cs`, `GodModeHost.cs`.
 - Compilar: `DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec dotnet build -c Release`.
+- Build de teste: `-p:Dev=1` inclui `src/Dev/` (canal de comandos por arquivo, ativo só com `GODMODE_DEV_DIR`).
