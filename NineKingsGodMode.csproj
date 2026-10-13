@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>NineKingsGodMode</AssemblyName>
+    <RootNamespace>NineKingsGodMode</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GameManaged>$(HOME)/Library/Application Support/Steam/steamapps/common/9 Kings/9Kings.app/Contents/Resources/Data/Managed</GameManaged>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(GameManaged)/netstandard.dll" Private="false" />
+    <Reference Include="$(GameManaged)/mscorlib.dll" Private="false" />
+    <Reference Include="$(GameManaged)/System.dll" Private="false" />
+    <Reference Include="$(GameManaged)/System.Core.dll" Private="false" />
+    <Reference Include="$(GameManaged)/UnityEngine*.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Unity.InputSystem.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Unity.Entities.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Unity.Mathematics.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Unity.Collections.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Assembly-CSharp-firstpass.dll" Private="false" />
+    <Reference Include="$(GameManaged)/Newtonsoft.Json.dll" Private="false" />
+    <Reference Include="lib/0Harmony.dll" Private="false" />
+  </ItemGroup>
+</Project>
