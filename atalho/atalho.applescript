@@ -1,0 +1,1 @@
+do shell script "/usr/bin/python3 -I \"$HOME/Programas/9kings-godmode/install.py\" install > /dev/null 2>&1; cd \"$HOME/Library/Application Support/Steam/steamapps/common/9 Kings\" && GODMODE_9K=1 ./9Kings.app/Contents/MacOS/9Kings > /dev/null 2>&1 &"

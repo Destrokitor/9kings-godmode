@@ -38,3 +38,9 @@ ele é refeito sozinho.
   `GodMenu.cs` (janela), `Ui.cs` (componentes no estilo do jogo), `KingSelectionToggle.cs`, `GodModeHost.cs`.
 - Compilar: `DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec dotnet build -c Release`.
 - Build de teste: `-p:Dev=1` inclui `src/Dev/` (canal de comandos por arquivo, ativo só com `GODMODE_DEV_DIR`).
+
+## Reinstalar em outro computador
+1. Baixe este repositório em `~/Programas/9kings-godmode`.
+2. Depende da Steam (jogo "9 Kings") e do .NET SDK (`dotnet build -c Release`). O `lib/0Harmony.dll` já vem no repositório.
+O mod do Rei do Entretenimento fica em outro repositório (`9kings-entertainment`) e é instalado pelo mesmo `install.py`.
+3. Recrie o atalho da mesa: `osacompile -o "~/Desktop/9 Kings Modo Deus.app" atalho/atalho.applescript`.
