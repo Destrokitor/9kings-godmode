@@ -23,6 +23,9 @@ Hover a card, decree or terrain and keep the mouse still to see its effect (the 
 | Decrees | activate any decree; clear decrees |
 | Combat | war/peace with each king; remove enemies from the battle; invincible; castle shoots |
 
+## Compatibility
+Tested on **9 Kings 0.9.8.3** (Early Access) on macOS. The game is still being updated (version 1.0 is announced for November 12, 2026), and an update can break this mod until it is adjusted. If the game does not start after an update, run `python3 install.py uninstall` to restore the original files.
+
 ## Requirements
 - **9 Kings** (Steam) on **macOS**. The installer patches the Mac app's `Data` folder, so Windows and Linux are not supported.
 - `python3` (included with the Xcode command line tools).

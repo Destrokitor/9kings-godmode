@@ -41,6 +41,9 @@ ele é refeito sozinho.
 - Compilar: `DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec dotnet build -c Release`.
 - Build de teste: `-p:Dev=1` inclui `src/Dev/` (canal de comandos por arquivo, ativo só com `GODMODE_DEV_DIR`).
 
+## Compatibilidade
+Testado no **9 Kings 0.9.8.3** (acesso antecipado) no macOS. O jogo ainda recebe atualizações (a versão 1.0 está anunciada para 12 de novembro de 2026) e uma atualização pode quebrar o mod até ele ser ajustado. Se o jogo não abrir depois de uma atualização, rode `python3 install.py uninstall` para restaurar os arquivos originais.
+
 ## Requisitos e instalação
 - **9 Kings** (Steam) no **macOS** (o instalador altera a pasta `Data` do app do Mac; Windows e Linux não são suportados) e `python3`.
 1. Baixe o zip na página **Releases** e descompacte.
