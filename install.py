@@ -1,5 +1,5 @@
 #!/usr/bin/env python3 -I
-"""Instala/remove os mods do 9 Kings (Modo Deus e, se compilado, Rei do Entretenimento).
+"""Instala/remove o mod Modo Deus do 9 Kings (macOS, Steam).
 
 Uso: install.py install | uninstall | status
 Copia as DLLs para Data/Managed e registra cada mod nos JSONs de inicialização da Unity.
@@ -12,13 +12,12 @@ DATA = os.path.join(GAME, '9Kings.app/Contents/Resources/Data')
 MANAGED = os.path.join(DATA, 'Managed')
 BACKUP = os.path.join(DATA, '.godmode_backup')
 HERE = os.path.dirname(os.path.abspath(__file__))
-PROGRAMAS = os.path.dirname(HERE)
 
-# (assembly, caminho da DLL compilada). Mods sem DLL compilada são ignorados.
-MODS = [
-    ('NineKingsGodMode', os.path.join(HERE, 'bin/Release/netstandard2.1/NineKingsGodMode.dll')),
-    ('NineKingsEntertainment', os.path.join(PROGRAMAS, '9kings-entertainment/bin/Release/netstandard2.1/NineKingsEntertainment.dll')),
-]
+# (assembly, caminho da DLL). Vale a DLL ao lado deste arquivo (pacote de download) ou a compilada em bin/Release.
+_DLL = 'NineKingsGodMode.dll'
+_BESIDE = os.path.join(HERE, _DLL)
+_BUILT = os.path.join(HERE, 'bin/Release/netstandard2.1', _DLL)
+MODS = [('NineKingsGodMode', _BESIDE if os.path.exists(_BESIDE) else _BUILT)]
 LIBS = ['0Harmony.dll']
 OLD_LIBS = ['MonoMod.RuntimeDetour.dll', 'MonoMod.Utils.dll', 'Mono.Cecil.dll', 'Mono.Cecil.Rocks.dll']
 JSONS = ['ScriptingAssemblies.json', 'RuntimeInitializeOnLoads.json']

@@ -1,46 +1,50 @@
-# 9 Kings — Modo Deus
+# 9 Kings — God Mode
 
-Mod para o 9 Kings (Mac/Steam): janela "Modo Deus" no visual do jogo para controlar a partida
-em tempo real, mais o console de desenvolvedor do próprio jogo liberado.
+A "God Mode" window, styled like the game, to control a run in real time, plus the game's own developer console unlocked. For **9 Kings on macOS (Steam)**.
 
-## Como jogar
-1. Abra pelo atalho **"9 Kings Modo Deus"** na Mesa. Pela Steam o jogo abre normal, sem o mod.
-2. **Start → Single Player → New Run**. Na tela "Choose a King", ligue **Modo Deus** (canto superior
-   direito). Todos os reis e perks ficam liberados nessa partida.
-3. Escolha o rei e jogue. Na partida, clique em **DEUS** (abaixo do ouro).
-4. Console do jogo: botão "Console do jogo" no menu, ou **Command direito + Delete**.
+*Leia em português: [README.pt-BR.md](README.pt-BR.md)*
 
-O Modo Deus continua ao usar **Continue**. Enquanto ele está ligado nada do seu perfil é gravado
-(XP, níveis, desbloqueios, estatísticas, conquistas Steam); ao voltar ao menu o perfil real é recarregado.
-Nunca liga no multiplayer.
+## How to play
+1. Run **`Play 9 Kings God Mode.command`** (double-click). Opening the game from Steam starts it normally, without the mod.
+2. **Start → Single Player → New Run**. On the "Choose a King" screen, switch **God Mode** on (top-right corner). All kings and perks are unlocked for that run.
+3. Pick a king and play. During the run, click **GOD** (below the gold counter).
+4. Game console: the "Game console" button in the menu, or **right Command + Delete**.
 
-Passe o mouse e deixe parado sobre uma carta, decreto ou terreno para ver o efeito (texto oficial do jogo).
+God Mode also works when you press **Continue**. While it is on, **nothing in your profile is written** (XP, levels, unlocks, stats, Steam achievements); when you go back to the menu, your real profile is reloaded. It never turns on in multiplayer.
 
-## Abas
-| Aba | O que faz |
+Hover a card, decree or terrain and keep the mouse still to see its effect (the game's official text).
+
+## Tabs
+| Tab | What it does |
 |---|---|
-| Recursos | ouro (+/−, +1.000, +100.000, zerar), vidas, limite de cartas na mão, invencível, vidas infinitas, castelo atira sozinho, velocidade 0,5x–8x |
-| Cartas | todas as cartas por rei; clique para pôr na mão, forçar no saque ou banir/liberar |
-| Reino | tabuleiro 5x5: subir/descer nível, +/−10 tropas, buff x2/x10, limpar, desbloquear terreno; liberar todos; subir nível de todos |
-| Decretos | ativar qualquer decreto; limpar decretos |
-| Combate | guerra/paz com cada rei; remover inimigos da batalha; invencível; castelo atira |
+| Resources | gold (+/−, +1,000, +100,000, zero), lives, hand card limit, invincible, infinite lives, castle shoots by itself, speed 0.5x–8x |
+| Cards | every card per king; click to put in hand, force on the next draw, or ban/unban |
+| Kingdom | 5x5 board: raise/lower level, +/−10 troops, ×2/×10 buff, clear, unlock terrain; unlock all; raise every level |
+| Decrees | activate any decree; clear decrees |
+| Combat | war/peace with each king; remove enemies from the battle; invincible; castle shoots |
 
-## Como funciona
-O 9 Kings usa Unity 6 (Mono). O BepInEx/Doorstop não injeta nessa versão no Mac, então o mod é
-carregado pelo próprio mecanismo da Unity: `install.py` copia `NineKingsGodMode.dll` + `0Harmony.dll`
-(Harmony 2.4.3, com suporte a ARM64) para `Data/Managed` e registra `Loader.Init` em
-`RuntimeInitializeOnLoads.json`. O mod só liga quando a variável `GODMODE_9K=1` existe (o atalho
-define). O atalho roda `install.py` antes de abrir — se uma atualização da Steam apagar o registro,
-ele é refeito sozinho.
+## Requirements
+- **9 Kings** (Steam) on **macOS**. The installer patches the Mac app's `Data` folder, so Windows and Linux are not supported.
+- `python3` (included with the Xcode command line tools).
 
-- `python3 install.py status | install | uninstall` (uninstall restaura os JSONs originais).
-- Código: `src/` — `GodMode.cs` (estado/proteção), `Patches.cs` (Harmony), `Actions.cs` (ações),
-  `GodMenu.cs` (janela), `Ui.cs` (componentes no estilo do jogo), `KingSelectionToggle.cs`, `GodModeHost.cs`.
-- Compilar: `DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec dotnet build -c Release`.
-- Build de teste: `-p:Dev=1` inclui `src/Dev/` (canal de comandos por arquivo, ativo só com `GODMODE_DEV_DIR`).
+## Install
+1. Download the zip from the **Releases** page and unzip it.
+2. Double-click **`Play 9 Kings God Mode.command`**. It installs the mod on the first run and opens the game with it enabled.
+   You can also run `python3 install.py status | install | uninstall` yourself. `uninstall` restores the original game files.
 
-## Reinstalar em outro computador
-1. Baixe este repositório em `~/Programas/9kings-godmode`.
-2. Depende da Steam (jogo "9 Kings") e do .NET SDK (`dotnet build -c Release`). O `lib/0Harmony.dll` já vem no repositório.
-O mod do Rei do Entretenimento fica em outro repositório (`9kings-entertainment`) e é instalado pelo mesmo `install.py`.
-3. Recrie o atalho da mesa: `osacompile -o "~/Desktop/9 Kings Modo Deus.app" atalho/atalho.applescript`.
+If a Steam update removes the registration, the launcher redoes it by itself.
+
+## How it works
+9 Kings uses Unity 6 (Mono). BepInEx/Doorstop does not inject into this version on macOS, so the mod is loaded by Unity's own mechanism: `install.py` copies `NineKingsGodMode.dll` and `0Harmony.dll` (Harmony 2.4.3, with ARM64 support) into `Data/Managed` and registers `Loader.Init` in `RuntimeInitializeOnLoads.json`. The mod only turns on when the `GODMODE_9K=1` environment variable exists, which the launcher sets. The original JSON files are saved in `Data/.godmode_backup/`.
+
+- Code: `src/` — `GodMode.cs` (state/protection), `Patches.cs` (Harmony), `Actions.cs` (actions), `GodMenu.cs` (window), `Ui.cs` (game-style components), `KingSelectionToggle.cs`, `GodModeHost.cs`.
+- Build: `DOTNET_ROOT=/opt/homebrew/opt/dotnet/libexec dotnet build -c Release` (needs the game installed, because the project references its Unity assemblies, which are **not** included here).
+- Test build: `-p:Dev=1` also compiles `src/Dev/` (a file-based command channel, active only with `GODMODE_DEV_DIR`). Never ship that build.
+
+## Disclaimer
+This is an unofficial fan-made mod. It is **not affiliated with or endorsed by Sad Socket**. 9 Kings and its related names and assets belong to their owners; this repository contains none of the game's files. Use it at your own risk and keep a backup of your profile (`~/Library/Application Support/SadSocket/9Kings`).
+
+## License
+[MIT](LICENSE). Harmony (`lib/0Harmony.dll`) is included under its own MIT license; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
+<!-- SUPPORT: when a donation link exists (Ko-fi, GitHub Sponsors, PIX QR code), add a "Support" section here. The mod must always stay fully free; donations are voluntary. -->
