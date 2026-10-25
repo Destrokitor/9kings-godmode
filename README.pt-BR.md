@@ -59,7 +59,7 @@ Mod não oficial, feito por fã. **Não tem ligação nem aprovação da Sad Soc
 
 Este mod é e sempre será **gratuito e completo**. Se você gostou e quiser agradecer, doações voluntárias são bem-vindas (nada fica bloqueado por doação e não há vantagens):
 
-- **PIX:** `pedro.comitre@gmail.com`
+- **PIX:** `338bf74c-1206-4fce-be86-a693397f382f`
 
 ## Licença
 [MIT](LICENSE).

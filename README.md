@@ -63,7 +63,7 @@ This is an unofficial fan-made mod. It is **not affiliated with or endorsed by S
 
 This mod is and will always be **free and complete**. If you enjoy it and want to say thanks, a voluntary donation is welcome (nothing is locked behind it, and there are no perks):
 
-- **PIX (Brazil):** `pedro.comitre@gmail.com`
+- **PIX (Brazil):** `338bf74c-1206-4fce-be86-a693397f382f`
 
 ## License
 [MIT](LICENSE). Harmony (`lib/0Harmony.dll`) is included under its own MIT license; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
