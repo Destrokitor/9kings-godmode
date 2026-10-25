@@ -14,6 +14,18 @@ God Mode also works when you press **Continue**. While it is on, **nothing in yo
 
 Hover a card, decree or terrain and keep the mouse still to see its effect (the game's official text).
 
+## Language
+The mod's interface is currently in **Brazilian Portuguese** only. English equivalents:
+
+| In the game | Meaning |
+|---|---|
+| Modo Deus | God Mode |
+| DEUS | GOD (the button during a run) |
+| Recursos · Cartas · Reino · Decretos · Combate | Resources · Cards · Kingdom · Decrees · Combat |
+| Ouro · Vidas · Limite da mão | Gold · Lives · Hand limit |
+| Invencível · Vidas infinitas · Castelo atira sozinho | Invincible · Infinite lives · Castle shoots by itself |
+| Console do jogo · Fechar · Zerar | Game console · Close · Zero |
+
 ## Tabs
 | Tab | What it does |
 |---|---|

@@ -18,6 +18,9 @@ Nunca liga no multiplayer.
 
 Passe o mouse e deixe parado sobre uma carta, decreto ou terreno para ver o efeito (texto oficial do jogo).
 
+## Idioma
+A interface do mod está só em português do Brasil por enquanto. O README em inglês traz a tabela de tradução.
+
 ## Abas
 | Aba | O que faz |
 |---|---|
