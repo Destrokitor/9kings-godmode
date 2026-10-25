@@ -47,7 +47,11 @@ If a Steam update removes the registration, the launcher redoes it by itself.
 ## Disclaimer
 This is an unofficial fan-made mod. It is **not affiliated with or endorsed by Sad Socket**. 9 Kings and its related names and assets belong to their owners; this repository contains none of the game's files. Use it at your own risk and keep a backup of your profile (`~/Library/Application Support/SadSocket/9Kings`).
 
+## Support
+
+This mod is and will always be **free and complete**. If you enjoy it and want to say thanks, a voluntary donation is welcome (nothing is locked behind it, and there are no perks):
+
+- **PIX (Brazil):** `pedro.comitre@gmail.com`
+
 ## License
 [MIT](LICENSE). Harmony (`lib/0Harmony.dll`) is included under its own MIT license; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
-
-<!-- SUPPORT: when a donation link exists (Ko-fi, GitHub Sponsors, PIX QR code), add a "Support" section here. The mod must always stay fully free; donations are voluntary. -->

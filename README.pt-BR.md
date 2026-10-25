@@ -52,6 +52,12 @@ Testado no **9 Kings 0.9.8.3** (acesso antecipado) no macOS. O jogo ainda recebe
 ## Aviso
 Mod não oficial, feito por fã. **Não tem ligação nem aprovação da Sad Socket.** 9 Kings e seus nomes e artes pertencem aos donos; este repositório não contém nenhum arquivo do jogo. Use por sua conta e risco e guarde uma cópia do seu save (`~/Library/Application Support/SadSocket/9Kings`).
 
+## Apoie
+
+Este mod é e sempre será **gratuito e completo**. Se você gostou e quiser agradecer, doações voluntárias são bem-vindas (nada fica bloqueado por doação e não há vantagens):
+
+- **PIX:** `pedro.comitre@gmail.com`
+
 ## Licença
 [MIT](LICENSE).
 
